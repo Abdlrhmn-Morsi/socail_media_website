@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="profile.css" />
+    <script src="index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <!--! nav bar  -->
+      <div style="position: relative; margin-bottom: 4rem; width: 100%">
+        <header
+          id="nav-bar"
+          class="d-flex justify-content-between align-items-center p-2 bg-white fixed-top"
+        >
+          <!-- * logo -->
+          <div class="d-flex gap-3 align-items-center">
+            <a href="index.html">
+              <img
+                onclick=""
+                style="width: 2.5rem; height: 2.5rem; cursor: pointer"
+                src="assets/app_logo.svg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <!-- * links -->
+          <div id="navbar-links" class="d-flex gap-5 align-items-center">
+            <a href="">Overview</a>
+            <a href="">Subscriptions</a>
+            <a href="">Streams</a>
+            <a href="">Library</a>
+          </div>
+
+          <div id="navbar-icons" class="d-flex gap-3 align-items-center">
+            <div
+              onclick="openNavLinksFunc()"
+              id="open-nav-links-btn"
+              class="d-none p-2 rounded"
+            >
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-bell"></i>
+            <a href="profile.html">
+              <img
+                style="width: 2.5rem; height: 2.5rem; object-fit: cover"
+                class="rounded-circle"
+                src="assets/person-2.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+        </header>
+        <div id="nav-links-overlay">
+          <div>Overview</div>
+          <div>Subscriptions</div>
+          <div>Streams</div>
+          <div>Library</div>
+        </div>
+      </div>
+      <!-- * content -->
+      <div
+        id="page-content"
+        class="m-4 d-flex justify-content-center align-items-start"
+      >
+        <!-- ? profile -->
+        <div
+          id="profile-content"
+          class="d-flex flex-column justify-content-center"
+        >
+          <!--! profile data -->
+          <div class="profile-data">
+            <div class="profile-header"></div>
+            <div class="p-2">
+              <div></div>
+              <img
+                src="/assets/person-2.jpg"
+                alt="Profile Picture"
+                class="profile-picture img-thumbnail rounded-circle"
+              />
+              <div class="d-flex justify-content-between align-items-center">
+                <div></div>
+                <div class="float-right">
+                  <button class="btn edit-profile-btn btn-sm">
+                    <i class="fa-solid fa-pen"></i> Edit Profile
+                  </button>
+                  <button class="btn btn-light btn-sm">...</button>
+                </div>
+              </div>
+              <h5 class="card-title mt-4">
+                Sam Lanson
+                <img
+                  style="width: 1.5rem; height: 1.5rem"
+                  src="assets/verified.png"
+                  alt=""
+                />
+              </h5>
+
+              <p class="card-text">250 connections</p>
+              <p class="card-text">
+                <small class="text-muted">Lead Developer</small> <br />
+                <small class="text-muted">New Hampshire</small> <br />
+                <small class="text-muted">Joined on Nov 26, 2019</small>
+              </p>
+              <ul class="nav nav-tabs card-header-tabs mt-4">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#posts">Posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#connections"
+                    >Connections
+                    <span
+                      style="
+                        background-color: rgb(47, 231, 255);
+                        color: black;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        padding: 0.3rem;
+                        border-radius: 0.2rem;
+                      "
+                      class=""
+                    >
+                      230</span
+                    ></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#media">Media</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#activity">Activity</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!--!thoughts -->
+          <div class="thoughts-box">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="assets/person-2.jpg"
+                alt="Profile Picture"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                "
+              />
+              <textarea
+                class="form-control ml-3 share-input"
+                placeholder="Share your thoughts..."
+                rows="1"
+              ></textarea>
+            </div>
+            <div
+              id="post-options"
+              class="d-flex flex-row justify-content-between mt-3"
+            >
+              <div class="btn-group-1 d-flex">
+                <button
+                  type="button"
+                  class="btn btn-light btn-icon text-success"
+                >
+                  <i class="fas fa-image"></i> Photo
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-icon text-primary"
+                >
+                  <i class="fas fa-video"></i> Video
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-icon text-danger"
+                >
+                  <i class="fas fa-calendar-alt"></i> Event
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light btn-icon text-warning"
+                >
+                  <i class="fas fa-smile"></i> Feeling/Activity
+                </button>
+              </div>
+              <div class="btn-group-2 d-flex">
+                <button type="button" class="btn btn-light btn-icon">
+                  <i class="fas fa-ellipsis-h"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- !posts -->
+          <div class="card mt-2">
+            <div class="card-header bg-white">
+              <div class="user-info">
+                <img src="assets/person-4.jpg" alt="User Photo" />
+                <div class="details">
+                  <h6 class="mb-0">Lori Ferguson</h6>
+                  <small class="text-muted">Web Developer at Webestica</small>
+                  <small class="text-muted"> · 2hr</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>
+                I'm thrilled to share that I've completed a graduate certificate
+                course in project management with the president's honor roll.
+              </p>
+              <img
+                src="assets/photo-2.jpg"
+                class="img-fluid rounded"
+                alt="Course Completion Image"
+              />
+            </div>
+            <div class="card-footer bg-white">
+              <div class="reaction">
+                <span class="text-primary">Liked (56)</span>
+                <span class="text-muted">Comments (12)</span>
+                <span class="text-muted ms-auto">Share (3)</span>
+              </div>
+            </div>
+            <!-- ?comments -->
+            <div class="container mt-4">
+              <!-- Add a comment input -->
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Add a comment..."
+                  rows="1"
+                ></textarea>
+              </div>
+
+              <!-- First comment -->
+              <div class="comment row mt-4">
+                <div class="col-1">
+                  <img
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      object-fit: cover;
+                      border-radius: 50%;
+                    "
+                    src="assets/person-1.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                  />
+                </div>
+                <div class="col-11">
+                  <div class="comment-header">
+                    <strong>Frances Guerrero</strong>
+                    <small class="text-muted">5hr</small>
+                  </div>
+                  <div class="comment-body">
+                    <p>
+                      Removed demands expense account in outward tedious do.
+                      Particular way thoroughly unaffected projection.
+                    </p>
+                  </div>
+                  <div class="like-reply">
+                    <span>Like (3) ·</span>
+                    <span>Reply ·</span>
+                    <span>View 5 replies</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reply to first comment -->
+              <div class="comment row ml-5">
+                <div class="col-1">
+                  <img
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      object-fit: cover;
+                      border-radius: 50%;
+                    "
+                    src="assets/person-3.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                  />
+                </div>
+                <div class="col-11">
+                  <div class="comment-header">
+                    <strong>Lori Stevens</strong>
+                    <small class="text-muted">2hr</small>
+                  </div>
+                  <div class="comment-body">
+                    <p>
+                      See resolved goodness felicity shy civility domestic had
+                      but Drawings offended yet answered Jennings perceive.
+                    </p>
+                  </div>
+                  <div class="like-reply">
+                    <span>Like (5) ·</span>
+                    <span>Reply</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Another reply -->
+              <div class="comment row ml-5">
+                <div class="col-1">
+                  <img
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      object-fit: cover;
+                      border-radius: 50%;
+                    "
+                    src="assets/person-2.jpg"
+                    class="rounded-circle"
+                    alt="User"
+                  />
+                </div>
+                <div class="col-11">
+                  <div class="comment-header">
+                    <strong>Billy Vasquez</strong>
+                    <small class="text-muted">15min</small>
+                  </div>
+                  <div class="comment-body">
+                    <p>Wishing calling is warrant settled was lucky.</p>
+                  </div>
+                  <div class="like-reply">
+                    <span>Like ·</span>
+                    <span>Reply</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Load more replies -->
+              <div class="ml-5 mb-2">
+                <a href="#">Load more replies</a>
+              </div>
+            </div>
+          </div>
+          <!--!post -->
+          <div class="post-container">
+            <div class="post-header">
+              <div class="d-flex align-items-center">
+                <img
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                  "
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                  alt="profile-pic"
+                  width="50"
+                />
+                <div>
+                  <span class="font-weight-bold">Apple Education</span><br />
+                  <small class="text-muted">9 November at 23:29</small>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Find out how you can save time in the classroom this year. Earn
+              recognition while you learn new skills on iPad and Mac. Start
+              recognition your first Apple Teacher badge today!
+            </p>
+
+            <div class="reaction-section">
+              <span class="text-muted"
+                ><strong>Sam Lanson</strong> likes this post</span
+              >
+            </div>
+
+            <div class="post-actions">
+              <div class="d-flex align-items-center">
+                <span><i class="fa fa-heart" style="color: #ed4956"></i></span>
+                <span class="ml-2">Louis, Billy and 126 others</span>
+              </div>
+              <div class="action-icons">
+                <a href="#"><i class="fa fa-comment"></i> 12 Comments</a>
+                <a href="#"><i class="fa fa-share"></i> 3 Shares</a>
+              </div>
+            </div>
+
+            <div class="reaction-section d-flex justify-content-around">
+              <a href="#" class="reaction-icons"
+                ><i class="fa fa-thumbs-up"></i> Liked (56)</a
+              >
+              <a href="#" class="reaction-icons"
+                ><i class="fa fa-comment"></i> Comments (12)</a
+              >
+              <a href="#" class="reaction-icons"
+                ><i class="fa fa-share"></i> Share (3)</a
+              >
+              <a href="#" class="reaction-icons"
+                ><i class="fa fa-paper-plane"></i> Send</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- ? side contnet -->
+        <div id="side-content">
+          <!-- * about -->
+          <div class="about-box">
+            <h5 class="font-weight-bold">About</h5>
+            <p>
+              He moonlights difficult engrossed it, sportsmen. Interested has
+              all Devonshire difficulty gay assistance joy.
+            </p>
+            <p>
+              <i class="far fa-calendar-alt mr-2"></i>
+              <strong>Born: </strong>October 20, 1990
+            </p>
+            <p>
+              <i class="fas fa-heart mr-2"></i> <strong>Status: </strong>Single
+            </p>
+            <p>
+              <i class="far fa-envelope mr-2"></i>
+              <strong>Email: </strong>webestica@gmail.com
+            </p>
+          </div>
+          <!-- * experience -->
+          <div class="experience-box">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="font-weight-bold">Experience</h5>
+              <button class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div class="company">
+              <div class="d-flex align-items-center">
+                <img src="assets/exp-1.svg" class="company-icon" />
+                <div>
+                  <h6 class="font-weight-bold mb-0">Apple Computer, Inc.</h6>
+                  <small>May 2015 – Present Employment</small><br />
+                  <small>Duration 8 mos</small>
+                </div>
+              </div>
+              <button class="edit-btn ml-auto">Edit</button>
+            </div>
+            <div class="company">
+              <div class="d-flex align-items-center">
+                <img src="assets/exp-2.svg" class="company-icon" />
+                <div>
+                  <h6 class="font-weight-bold mb-0">Microsoft Corporation</h6>
+                  <small>May 2017 – Present Employment</small><br />
+                  <small>Duration 1 yrs 5 mos</small>
+                </div>
+              </div>
+              <button class="edit-btn ml-auto">Edit</button>
+            </div>
+            <div class="company">
+              <div class="d-flex align-items-center">
+                <img src="assets/exp-3.svg" class="company-icon" />
+                <div>
+                  <h6 class="font-weight-bold mb-0">
+                    Tata Consultancy Services.
+                  </h6>
+                  <small>May 2022 – Present Employment</small><br />
+                  <small>Duration 6 yrs 10 mos</small>
+                </div>
+              </div>
+              <button class="edit-btn ml-auto">Edit</button>
+            </div>
+          </div>
+          <!-- * photos -->
+          <div class="photos-box">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="font-weight-bold">Photos</h5>
+              <a href="#" class="btn btn-light btn-sm">See all photos</a>
+            </div>
+            <div class="row g-2">
+              <div class="col-6 mb-2">
+                <img src="assets/photo-1.jpg" alt="Photo 1" class="photo-img" />
+              </div>
+              <div class="col-6 mb-2">
+                <img src="assets/photo-2.jpg" alt="Photo 2" class="photo-img" />
+              </div>
+              <div class="col-4">
+                <img src="assets/photo-3.jpg" alt="Photo 3" class="photo-img" />
+              </div>
+              <div class="col-4">
+                <img src="assets/photo-4.jpg" alt="Photo 4" class="photo-img" />
+              </div>
+              <div class="col-4">
+                <img src="assets/photo-5.jpg" alt="Photo 5" class="photo-img" />
+              </div>
+            </div>
+          </div>
+          <!-- * Friends -->
+          <div class="friends-box">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="font-weight-bold">
+                Friends <span class="badge badge-pink">230</span>
+              </h5>
+              <a href="#" class="btn btn-light btn-sm">See all friends</a>
+            </div>
+            <div id="friends-cards">
+              <div class="friend-card">
+                <img
+                  src="assets/person-1.jpg"
+                  alt="Amanda Reed"
+                  class="friend-img"
+                />
+                <h6 class="font-weight-bold mb-0">Amanda Reed</h6>
+                <small>16 mutual connections</small>
+                <div class="mt-2">
+                  <button class="btn btn-primary btn-connection">
+                    <i class="fas fa-envelope btn-icon"></i>
+                  </button>
+                  <button class="btn btn-danger btn-connection">
+                    <i class="fas fa-user-plus btn-icon"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="friend-card">
+                <img
+                  src="assets/person-2.jpg"
+                  alt="Samuel Bishop"
+                  class="friend-img"
+                />
+                <h6 class="font-weight-bold mb-0">Samuel Bishop</h6>
+                <small>22 mutual connections</small>
+                <div class="mt-2">
+                  <button class="btn btn-primary btn-connection">
+                    <i class="fas fa-envelope btn-icon"></i>
+                  </button>
+                  <button class="btn btn-danger btn-connection">
+                    <i class="fas fa-user-plus btn-icon"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="friend-card">
+                <img
+                  src="assets/person-3.jpg"
+                  alt="Bryan Knight"
+                  class="friend-img"
+                />
+                <h6 class="font-weight-bold mb-0">Bryan Knight</h6>
+                <small>1 mutual connection</small>
+                <div class="mt-2">
+                  <button class="btn btn-primary btn-connection">
+                    <i class="fas fa-envelope btn-icon"></i>
+                  </button>
+                  <button class="btn btn-danger btn-connection">
+                    <i class="fas fa-user-plus btn-icon"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="friend-card">
+                <img
+                  src="assets/person-4.jpg"
+                  alt="Amanda Reed"
+                  class="friend-img"
+                />
+                <h6 class="font-weight-bold mb-0">Amanda Reed</h6>
+                <small>15 mutual connections</small>
+                <div class="mt-2">
+                  <button class="btn btn-primary btn-connection">
+                    <i class="fas fa-envelope btn-icon"></i>
+                  </button>
+                  <button class="btn btn-danger btn-connection">
+                    <i class="fas fa-user-plus btn-icon"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
