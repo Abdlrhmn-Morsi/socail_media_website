@@ -63,7 +63,7 @@ img {
   cursor: pointer;
 }
 #nav-links-overlay {
-  margin-top: 3.5rem;
+  margin-top: 0;
   padding: 1rem;
   visibility: hidden;
   z-index: 1;
